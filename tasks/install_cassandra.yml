@@ -8,14 +8,14 @@
 - name: "Install a list of packages"
   yum:
     name:
-    - cassandra
+    - apache-cassandra
     state: present
     update_cache: yes
 # https://docs.ansible.com/ansible/latest/modules/yum_module.html 
 
 - name: "Make sure a service 'cassandra' is enable"
   systemd:
-    name: cassandra
+    name: apache-cassandra
     enabled: yes
     state: started # started, stopped, restarted
 # https://docs.ansible.com/ansible/latest/modules/systemd_module.html
