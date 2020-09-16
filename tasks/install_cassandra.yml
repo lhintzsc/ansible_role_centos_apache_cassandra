@@ -12,3 +12,10 @@
     - Apache Cassandra
     state: present
 # https://docs.ansible.com/ansible/latest/modules/yum_module.html 
+
+- name: "Make sure a service 'cassandra' is enable"
+  systemd:
+    name: cassandra
+    enabled: yes
+    state: started # started, stopped, restarted
+# https://docs.ansible.com/ansible/latest/modules/systemd_module.html
