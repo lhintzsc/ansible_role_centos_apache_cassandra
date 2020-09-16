@@ -1,3 +1,4 @@
 ---
 # tasks file for centos_apache_cassandra
 - include_tasks: install_java.yml
+- include_tasks: install_cassandra.yml

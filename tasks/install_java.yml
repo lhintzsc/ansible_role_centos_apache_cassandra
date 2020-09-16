@@ -11,7 +11,6 @@
   register: output
 # https://docs.ansible.com/ansible/latest/modules/command_module.html#command-module 
 
-
 - debug:
     var: "output"
 # https://docs.ansible.com/ansible/latest/modules/debug_module.html 
