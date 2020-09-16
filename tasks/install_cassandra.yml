@@ -1,6 +1,6 @@
 - name: "Add repo Cassandra to yum repo"
   yum_repository:
-    name: Apache Cassandra
+    name: apache-cassandra
     description: Apache Cassandra Repo
     baseurl: https://www.apache.org/dist/cassandra/redhat/311x/
 # https://docs.ansible.com/ansible/latest/modules/yum_repository_module.html 
@@ -8,7 +8,7 @@
 - name: "Install a list of packages"
   yum:
     name:
-    - Apache Cassandra
+    - apache-cassandra
     state: present
 # https://docs.ansible.com/ansible/latest/modules/yum_module.html 
 
