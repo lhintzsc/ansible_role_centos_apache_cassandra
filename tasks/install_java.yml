@@ -1,4 +1,4 @@
-- name: "I'nstall a list of packages"
+- name: "Install a list of packages"
   yum:
     name:
     - java
@@ -7,6 +7,6 @@
 
 
 - name: "Execute java --version"
-  command: java --version
+  command: java -version
   register: output
 # https://docs.ansible.com/ansible/latest/modules/command_module.html#command-module 
