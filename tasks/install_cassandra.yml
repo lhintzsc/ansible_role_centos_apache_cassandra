@@ -8,7 +8,7 @@
 - name: "Install a list of packages"
   yum:
     name:
-    - apache-cassandra
+    - cassandra
     state: present
 # https://docs.ansible.com/ansible/latest/modules/yum_module.html 
 
