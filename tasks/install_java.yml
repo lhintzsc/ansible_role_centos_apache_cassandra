@@ -1,4 +1,12 @@
+- name: "I'nstall a list of packages"
+  yum:
+    name:
+    - java
+    state: present
+# https://docs.ansible.com/ansible/latest/modules/yum_module.html 
+
+
 - name: "Execute java --version"
-  shell: java --version
+  command: java --version
   register: output
 # https://docs.ansible.com/ansible/latest/modules/command_module.html#command-module 
