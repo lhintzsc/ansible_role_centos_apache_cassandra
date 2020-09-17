@@ -3,3 +3,4 @@
 cassandra_path: "/etc/cassandra/conf"
 cassandra_config: "{{cassandra_path}}/cassandra.yaml"
 cassandra_tracetype_query_ttl: 300
+cassandra_monitor_user: appdynamics

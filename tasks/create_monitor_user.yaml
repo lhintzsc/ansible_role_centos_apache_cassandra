@@ -1,0 +1,9 @@
+- name: "Copy create_monitor_user.sql to ~./"
+  template:
+    src: create_monitor_user.sql
+    dest: ~./
+    owner: root
+    group: root
+    mode: '0664'
+# https://docs.ansible.com/ansible/latest/modules/template_module.html 
+# http://www.filepermissions.com/file-permissions-index 

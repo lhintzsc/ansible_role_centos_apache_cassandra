@@ -1,0 +1,3 @@
+CREATE ROLE {{ cassandra_monitor_user }};
+GRANT SELECT ON KEYSPACE system_traces TO {{ cassandra_monitor_user }};
+GRANT {{ cassandra_monitor_user }} TO appdynamics;
