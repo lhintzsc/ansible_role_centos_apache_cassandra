@@ -12,14 +12,7 @@
     state: present
     update_cache: yes
     disable_gpg_check: yes
-  register: output
-  
-
 # https://docs.ansible.com/ansible/latest/modules/yum_module.html 
-
-- debug:
-    var: "output"
-# https://docs.ansible.com/ansible/latest/modules/debug_module.html 
 
 - name: "Make sure a service 'cassandra' is enabled and started"
   systemd:
