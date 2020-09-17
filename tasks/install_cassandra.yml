@@ -11,7 +11,7 @@
     - cassandra
     state: present
     update_cache: yes
-    gpgcheck: no
+    disable_gpg_check: yes
   register: output
   
 
