@@ -4,5 +4,5 @@
     dest: "{{ item.dest}}"
     flat: yes
   with_items:
-   - { src: "{{cassandra_config}}", dest: ./files }
+   - { src: "{{cassandra_config}}", dest: ./files/cassandra.yaml }
 # https://docs.ansible.com/ansible/latest/modules/fetch_module.html
