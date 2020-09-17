@@ -8,12 +8,12 @@
 - name: "Install a list of packages"
   yum:
     name:
-    - apache-cassandra
+    - cassandra
     state: present
     update_cache: yes
 # https://docs.ansible.com/ansible/latest/modules/yum_module.html 
 
-- name: "Make sure a service 'cassandra' is enable"
+- name: "Make sure a service 'cassandra' is enabled and started"
   systemd:
     name: apache-cassandra
     enabled: yes
