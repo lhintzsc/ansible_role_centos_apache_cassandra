@@ -12,6 +12,8 @@
     state: present
     update_cache: yes
   register: output
+  gpgcheck: no
+
 # https://docs.ansible.com/ansible/latest/modules/yum_module.html 
 
 - debug:
