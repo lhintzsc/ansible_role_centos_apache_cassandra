@@ -1,2 +1,4 @@
 ---
 # defaults file for centos_apache_cassandra
+cassandra_path: "/etc/cassandra/conf"
+cassandra_config: "{{cassandra_path}}/cassandra.yaml"
