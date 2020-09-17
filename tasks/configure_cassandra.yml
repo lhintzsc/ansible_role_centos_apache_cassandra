@@ -1,14 +1,13 @@
 
 - name: "Copy cassandra.yaml to {{ cassandra_config }}"
   template:
-    src: {{ cassandra.yaml.j2 }}
+    src: cassandra.yaml.j2
     dest: "{{cassandra_config}}"
     owner: root
     group: root
     mode: '0664'
 # https://docs.ansible.com/ansible/latest/modules/template_module.html 
 # http://www.filepermissions.com/file-permissions-index 
-
 
 - name: "Download cassandra.yml from remote to ansible host"
   fetch:
