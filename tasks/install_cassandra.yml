@@ -5,13 +5,18 @@
     baseurl: https://www.apache.org/dist/cassandra/redhat/311x/
 # https://docs.ansible.com/ansible/latest/modules/yum_repository_module.html 
 
-- name: "Install a list of packages"
+- name: "Install cassandra package"
   yum:
     name:
     - cassandra
     state: present
     update_cache: yes
+  register: output
 # https://docs.ansible.com/ansible/latest/modules/yum_module.html 
+
+- debug:
+    var: "output"
+# https://docs.ansible.com/ansible/latest/modules/debug_module.html 
 
 - name: "Make sure a service 'cassandra' is enabled and started"
   systemd:
