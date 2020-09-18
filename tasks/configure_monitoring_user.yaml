@@ -19,5 +19,5 @@
 # https://docs.ansible.com/ansible/latest/modules/template_module.html 
 # http://www.filepermissions.com/file-permissions-index 
   with_items:
-    - {src: "create_monitor_user.cql.j2", dest: "{{ cassandra_files_for_setup }}" }
-    - {src: "set_tracing_on.cql.j2", dest: "{{ cassandra_files_for_setup }}" }
+    - {src: "create_monitor_user.cql.j2", dest: "{{ cassandra_path_for_setup }}" }
+    - {src: "set_tracing_on.cql.j2", dest: "{{ cassandra_path_for_setup }}" }
