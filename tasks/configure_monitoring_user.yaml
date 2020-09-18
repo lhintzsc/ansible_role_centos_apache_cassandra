@@ -24,10 +24,15 @@
     - {src: "check_role.cql.j2", dest: "{{ cassandra_path_for_setup}}/check_role.cql" }
     - {src: "check_tracing.cql.j2", dest: "{{ cassandra_path_for_setup}}/check_tracing.cql" }
 
-- name: "Shell: cqlsh -f check_tracing.cql"
-  shell: cqlsh -f {{ cassandra_path_for_setup }}/check_tracing.cql -u "{{ cassandra_default_user }}" -p "{{ cassandra_default_password }}" | sed 's|\.||g' | awk '{print $4}'
-  register: output
+- name: "Check if tracing is enabled"
+  shell: cqlsh -f {{ cassandra_path_for_setup }}/check_tracing.cql -u {{ cassandra_default_user }} -p {{ cassandra_default_password }} | sed 's|\.||g' | awk '{print $4}'
+  register: cassandra_tracing_status
 # https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module 
+
+- name: "Enable tracing if it is disabled"
+  shell: cqlsh -f {{ cassandra_path_for_setup }}/set_tracing_on.cql -u {{ cassandra_default_user }} -p {{ cassandra_default_password }} | sed 's|\.||g' | awk '{print $4}'
+  when: cassandra_tracing_status['stdout'] == "disabled"
+  register: output
 
 - debug:
     var: "output"
