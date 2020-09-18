@@ -1,2 +1,4 @@
 ---
 # handlers file for centos_apache_cassandra
+- name: "Enable tracing"
+  shell: cqlsh -f {{ cassandra_path_for_setup }}/set_tracing_on.cql -u {{ cassandra_default_user }} -p {{ cassandra_default_password }} | sed 's|\.||g' | awk '{print $4}'
