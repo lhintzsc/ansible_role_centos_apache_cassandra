@@ -1,0 +1,23 @@
+- name: "Create {{ cassandra_path_for_setup }} if it does not exist"
+  file:
+    path: "{{ cassandra_path_for_setup }}"
+    recurse: yes
+    owner: root 
+    group: root 
+    mode: '0755'
+    state: directory  # directory or file
+# https://docs.ansible.com/ansible/latest/modules/file_module.html
+# http://www.filepermissions.com/file-permissions-index
+
+- name: "Copy cql files to {{ cassandra_path_for_setup }}"
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: '0664'
+# https://docs.ansible.com/ansible/latest/modules/template_module.html 
+# http://www.filepermissions.com/file-permissions-index 
+  with_items:
+    - {src: "create_monitor_user.cql.j2", dest: "{{ cassandra_files_for_setup }}" }
+    - {src: "set_tracing_on.cql.j2", dest: "{{ cassandra_files_for_setup }}" }
