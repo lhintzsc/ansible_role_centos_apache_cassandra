@@ -37,5 +37,5 @@
 # https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module 
 
 - debug:
-    var: "cassandra_monitoring_user_status"
+    var: "cassandra_tracing_status"
 # https://docs.ansible.com/ansible/latest/modules/debug_module.html 
