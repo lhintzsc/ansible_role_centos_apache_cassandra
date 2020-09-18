@@ -25,7 +25,7 @@
     - {src: "check_tracing.cql.j2", dest: "{{ cassandra_path_for_setup}}/check_tracing.cql" }
 
 - name: "Shell: cqlsh -f check_tracing.cql"
-  shell: cqlsh -f "{{ cassandra_path_for_setup}}/check_tracing.cql" -u "{{ cassandra_default_user }}" -p "{{ cassandra_default_password }}" | sed 's|\.||g' | awk '{print $4}'
+  shell: cqlsh -f {{ cassandra_path_for_setup }}/check_tracing.cql -u "{{ cassandra_default_user }}" -p "{{ cassandra_default_password }}" | sed 's|\.||g' | awk '{print $4}'
   register: output
 # https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module 
 
