@@ -27,7 +27,7 @@
 - name: "Check if tracing is enabled"
   shell: cqlsh -f {{ cassandra_path_for_setup }}/check_tracing.cql -u {{ cassandra_default_user }} -p {{ cassandra_default_password }} | sed 's|\.||g' | awk '{print $4}'
   register: cassandra_tracing_status
-  failed_when: cassandra_tracing_status['stdout'] == "disabled"
+  changed_when: cassandra_tracing_status['stdout'] == "disabled"
 # https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module 
   notify: "Enable tracing"
 
