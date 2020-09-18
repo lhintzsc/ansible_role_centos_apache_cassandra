@@ -5,4 +5,6 @@ cassandra_config: "{{cassandra_path}}/cassandra.yaml"
 cassandra_tracetype_query_ttl: "300"
 cassandra_monitor_user: "appdynamics"
 cassandra_path_for_setup: "~/cassandra/monitoring"
+
+# https://stackoverflow.com/questions/40026283/you-have-to-be-logged-in-and-not-anonymous-to-perform-this-request-in-cassandra
 cassandra_authenticator: "PasswordAuthenticator"
