@@ -20,4 +20,4 @@
 # http://www.filepermissions.com/file-permissions-index 
   with_items:
     - {src: "create_monitor_user.cql.j2", dest: "{{ cassandra_path_for_setup }}/create_monitor_user.cql" }
-    - {src: "set_tracing_on.cql.j2", dest: "{{ cassandra_path_for_setup/set_tracing_on.cql" }}" }
+    - {src: "set_tracing_on.cql.j2", dest: "{{ cassandra_path_for_setup}}/set_tracing_on.cql" }
