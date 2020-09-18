@@ -17,12 +17,3 @@
   with_items:
    - { src: "{{cassandra_config}}", dest: ./files/ }
 # https://docs.ansible.com/ansible/latest/modules/fetch_module.html
-
-- name: "Shell: cqlsh -f check_tracing.cql"
-  shell: cqlsh -f check_tracing.cql -u "{{ cassandra_default_user }}" -p "{{ cassandra_default_password }}" | sed 's|\.||g' | awk '{print $4}'
-  register: output
-# https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module 
-
-- debug:
-    var: "output"
-# https://docs.ansible.com/ansible/latest/modules/debug_module.html 
