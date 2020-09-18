@@ -34,6 +34,11 @@
   when: cassandra_tracing_status['stdout'] == "disabled"
   register: output
 
+- name: "Check if monitoring user exists"
+  shell: cqlsh -f {{ cassandra_path_for_setup }}/check_role.cql.cql -u {{ cassandra_default_user }} -p {{ cassandra_default_password }} | sed 's|\.||g' | awk '{print $4}'
+  register: cassandra_monitoring_user_status
+# https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module 
+
 - debug:
-    var: "output"
+    var: "cassandra_monitoring_user_status"
 # https://docs.ansible.com/ansible/latest/modules/debug_module.html 
