@@ -1,4 +1,4 @@
 ---
 # handlers file for centos_apache_cassandra
 - name: "Set tracing probability"
-  shell: nodetool settraceprobability "{{ cassandra_tracing_probability }}"
+  shell: nodetool settraceprobability {{ cassandra_tracing_probability }}
