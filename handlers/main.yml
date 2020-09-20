@@ -6,3 +6,10 @@
 
 - name: "Create monitoring user"
   shell: cqlsh -f {{ cassandra_path_for_setup}}/create_monitor_user.cql -u {{ cassandra_default_user }} -p {{ cassandra_default_password }}
+
+- name: "Restart cassandra"
+  systemd:
+    name: cassandra
+    state: restarted # started, stopped, restarted
+
+    

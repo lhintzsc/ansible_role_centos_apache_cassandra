@@ -8,7 +8,7 @@ cassandra_monitor_password: "appdynamics"
 cassandra_path_for_setup: "~/cassandra/monitoring"
 
 # https://stackoverflow.com/questions/40026283/you-have-to-be-logged-in-and-not-anonymous-to-perform-this-request-in-cassandra
-cassandra_authorizer: "org.apache.cassandra.auth.CassandraAuthorizer"
+cassandra_authorizer: "CassandraAuthorizer"
 cassandra_authenticator: "PasswordAuthenticator"
 cassandra_default_user: "cassandra"
 cassandra_default_password: "cassandra"

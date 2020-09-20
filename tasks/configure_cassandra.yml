@@ -7,7 +7,10 @@
     group: root
     mode: '0664'
 # https://docs.ansible.com/ansible/latest/modules/template_module.html 
-# http://www.filepermissions.com/file-permissions-index 
+# http://www.filepermissions.com/file-permissions-index
+  notify: Restart cassandra
+
+- meta: flush_handlers
 
 - name: "Download cassandra.yml from remote to ansible host"
   fetch:
