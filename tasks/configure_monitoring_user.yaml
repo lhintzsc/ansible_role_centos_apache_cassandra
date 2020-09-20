@@ -24,12 +24,12 @@
     - {src: "check_role.cql.j2", dest: "{{ cassandra_path_for_setup}}/check_role.cql" }
     - {src: "check_tracing.cql.j2", dest: "{{ cassandra_path_for_setup}}/check_tracing.cql" }
 
-- name: "Check if tracing is enabled"
-  shell: cqlsh -f {{ cassandra_path_for_setup }}/check_tracing.cql -u {{ cassandra_default_user }} -p {{ cassandra_default_password }} | sed 's|\.||g' | awk '{print $4}'
-  register: cassandra_tracing_status
-  changed_when: cassandra_tracing_status['stdout'] == "disabled"
+- name: "Check probability of tracing"
+  shell: nodetool gettraceprobability | awk '{print $4}
+  register: cassandra_tracing_probability
+  changed_when: cassandra_tracing_probability['stdout'] != "{{ cassandra_tracing_probability }}"
 # https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module 
-  notify: "Enable tracing"
+  notify: "Set tracing probability"
 
 - name: "Check if monitoring user exists"
   shell: cqlsh -f {{ cassandra_path_for_setup }}/check_role.cql -u {{ cassandra_default_user }} -p {{ cassandra_default_password }} | sed 's|\.||g' | awk '{print $4}'
