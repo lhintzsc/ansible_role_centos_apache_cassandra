@@ -37,5 +37,9 @@
 # https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module 
 
 - debug:
-    var: "cassandra_tracing_status"
+    var: "cassandra_tracing_probability"
+# https://docs.ansible.com/ansible/latest/modules/debug_module.html 
+
+- debug:
+    msg: "shell {{ cassandra_tracing_probability }}"
 # https://docs.ansible.com/ansible/latest/modules/debug_module.html 
