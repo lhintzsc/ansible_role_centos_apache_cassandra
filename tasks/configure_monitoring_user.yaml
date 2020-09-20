@@ -4,7 +4,7 @@
     recurse: yes
     owner: root 
     group: root 
-    mode: '0755'
+    mode: '0664'
     state: directory  # directory or file
 # https://docs.ansible.com/ansible/latest/modules/file_module.html
 # http://www.filepermissions.com/file-permissions-index
