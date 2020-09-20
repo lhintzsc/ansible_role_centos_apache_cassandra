@@ -25,7 +25,7 @@
     - {src: "check_tracing.cql.j2", dest: "{{ cassandra_path_for_setup}}/check_tracing.cql" }
 
 - name: "Check probability of tracing"
-  shell: nodetool gettraceprobability | awk '{print $4}
+  shell: nodetool gettraceprobability | awk '{print $4}'
   register: cassandra_tracing_probability
   changed_when: cassandra_tracing_probability['stdout'] != "{{ cassandra_tracing_probability }}"
 # https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module 
