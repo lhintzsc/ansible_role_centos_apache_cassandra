@@ -35,6 +35,7 @@
   shell: cqlsh -f {{ cassandra_path_for_setup}}/check_role.cql -u {{ cassandra_default_user }} -p {{ cassandra_default_password }} | tail -3 | head -1 | awk '{print $1}'
   register: cassandra_monitoring_user_status
   changed_when: cassandra_monitoring_user_status['stdout'] == '0'
+  notify: "Create monitoring user"
 # https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module 
 
 - debug:

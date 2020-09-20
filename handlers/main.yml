@@ -5,4 +5,4 @@
 
 
 - name: "Create monitoring user"
-  shell: "nodetool settraceprobability {{ cassandra_tracing_probability }}"
+  shell: cqlsh -f {{ cassandra_path_for_setup}}/creawte_monitor_user.cql -u {{ cassandra_default_user }} -p {{ cassandra_default_password }}
