@@ -2,6 +2,7 @@
 # defaults file for centos_apache_cassandra
 cassandra_path: "/etc/cassandra/conf"
 cassandra_config: "{{cassandra_path}}/cassandra.yaml"
+cassandra_env: "{{cassandra_path}}/cassandra-env.sh"
 cassandra_tracetype_query_ttl: "300"
 cassandra_monitor_user: "appdynamics"
 cassandra_monitor_password: "appdynamics"
