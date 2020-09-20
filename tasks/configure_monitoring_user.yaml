@@ -27,7 +27,7 @@
 - name: "Check probability of tracing"
   shell: nodetool gettraceprobability | awk '{print $4}'
   register: cassandra_tracing_probability
-  changed_when: cassandra_tracing_probability['stdout'] != {{ cassandra_tracing_probability }}
+  changed_when: cassandra_tracing_probability['stdout'] != cassandra_tracing_probability
 # https://docs.ansible.com/ansible/latest/modules/shell_module.html#shell-module 
   notify: "Set tracing probability"
 
