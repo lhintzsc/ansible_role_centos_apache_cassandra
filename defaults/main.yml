@@ -17,5 +17,5 @@ cassandra_tracing_probability: "1.0"
 cassandra_jmxremote_authenticate: "true"
 cassandra_jmxremote_password_file: /etc/cassandra/jmxremote.password
 cassandra_rpc_port: 9160
-cassandra_rpc_address: ""
-cassandra_rpc_interface: ens192
+cassandra_rpc_address: "localhost"
+cassandra_rpc_interface: "ens192"
