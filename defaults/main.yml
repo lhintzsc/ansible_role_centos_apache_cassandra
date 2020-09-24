@@ -14,8 +14,14 @@ cassandra_authenticator: "PasswordAuthenticator"
 cassandra_default_user: "cassandra"
 cassandra_default_password: "cassandra"
 cassandra_tracing_probability: "1.0"
+
+# jmx connection to cassandra db (see cassandra-enf.sh)
+cassandra_local_jmx: "false" # false or empty string ""
 cassandra_jmxremote_authenticate: "true"
 cassandra_jmxremote_password_file: /etc/cassandra/jmxremote.password
+
+# remote connections to cassandra db (see cassandra.yml)
+cassandra_start_rpc: true # true to enable remote connections, false otherwise
 cassandra_rpc_port: 9160
-cassandra_rpc_address: "0.0.0.0" # localhost, remote host, all hosts = 0.0.0.0
+cassandra_rpc_address: "" # localhost, remote host, all hosts = 0.0.0.0
 cassandra_rpc_interface: "ens192"
