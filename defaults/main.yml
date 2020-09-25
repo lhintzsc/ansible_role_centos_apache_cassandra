@@ -19,6 +19,7 @@ cassandra_tracing_probability: "1.0"
 cassandra_local_jmx: "false" # false or empty string ""
 cassandra_jmxremote_authenticate: "true"
 cassandra_jmxremote_password_file: /etc/cassandra/jmxremote.password
+cassandra_jmx_port: "7199"
 
 # remote connections to cassandra db (see cassandra.yml)
 cassandra_start_rpc: true # true to enable remote connections, false otherwise
